@@ -4,5 +4,25 @@
  * ' 111-223-1123 ' should be ' ***-***-1123 '
  */
 
+const prompt = require('prompt-sync')();
+
+
+
 
 module.exports = encryptPhoneNumber;
+
+function encryptPhoneNumber(phoneNumber) {
+  let newNumber = ""
+  for (index = 0; index < 12; index++) {
+    if (index < 2) {
+      newNumber += "*"
+    } else if (index = 3) {
+      newNumber === "-"
+    } else if (index > 4 && index < 7) {
+      newNumber += "*"
+    } else {
+      newNumber += phoneNumber[index]
+    }
+  }
+  console.log(newNumber)
+}
